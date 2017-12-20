@@ -54,18 +54,35 @@ print('\'ABCDEFG\'[::2]','ABCDEFG'[::2])
 # 利用切片操作，实现一个trim()函数，去除字符串首尾的空格，注意不要调用str的strip()方法：
 def trim(x):
 	lens = len(x)
+	# if lens==0:
+	# 	return ''
 	s = 0
 	for i in x:
 		if(i==" "):
 			s+=1
 		else:
 			break
-		a = x[s:]
-		lens = len(a)
-		j = lens -1
-		while a[j]==" ":
-			j -= 1
-		b = a[:j]
-		return b
+	if s==lens:
+		return ''
+	a = x[s:]
+	lens = len(a)
+	j = lens -1
+	while a[j]==" ":
+		j -= 1
+	b = a[:j+1]
+	return b
 
-print(trim('     AGDDFFF   fwefew  '))
+if trim('hello  ') != 'hello':
+	print('测试失败1!')
+elif trim('  hello') != 'hello':
+	print('测试失败2!')
+elif trim('  hello  ') != 'hello':
+	print('测试失败3!')
+elif trim('  hello  world  ') != 'hello  world':
+	print('测试失败4!')
+elif trim('') != '':
+	print('测试失败5!')
+elif trim('    ') != '':
+	print('测试失败6!')
+else:
+	print('测试成功!')
