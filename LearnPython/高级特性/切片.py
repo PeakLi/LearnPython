@@ -72,6 +72,16 @@ def trim(x):
 	b = a[:j+1]
 	return b
 
+# 最简洁的方法
+def trim(s):
+	if s == None or len(s) == 0:
+		return ''
+	while s[0: 1] == ' ':
+		s = s[1: ]
+	while s[-1: ] == ' ':
+		s = s[: -1]
+	return s
+
 if trim('hello  ') != 'hello':
 	print('测试失败1!')
 elif trim('  hello') != 'hello':
