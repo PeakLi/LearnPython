@@ -7,6 +7,7 @@ def my_abs(x):
 		return -x
 a = my_abs(-1.23)
 print(a)
+
 # 如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。return None可以简写为return。
 
 # 如果你已经把my_abs()的函数定义保存为abstest.py文件了，那么，可以在该文件的当前目录下启动Python解释器，
@@ -31,8 +32,11 @@ if age > 18:
 # 当传入了不恰当的参数时，内置函数abs会检查出参数错误，而我们定义的my_abs没有参数检查，会导致if语句出错，
 # 出错信息和abs不一样。所以，这个函数定义不够完善。
 # 让我们修改一下my_abs的定义，对参数类型做检查，只允许整数和浮点数类型的参数。数据类型检查可以用内置函数isinstance()实现：
+help(isinstance)
+x=1.3
 def my_abs(x):
-    if not isinstance(x, (int, float)):
+    #if not isinstance(x, (int, float)):
+    if not isinstance(x,(int,str)):
         raise TypeError('bad operand type')
     if x >= 0:
         return x

@@ -23,7 +23,6 @@ print(a)
 # 二是通过dict提供的get()方法，如果key不存在，可以返回None，或者自己指定的value：
 a = d.get('peakli')
 b = d.get('peakli',1)
-print('a:',a," b:",b)
 
 # 要删除一个key，用pop(key)方法，对应的value也会从dict中删除：
 d.pop('Bob')
